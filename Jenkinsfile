@@ -5,19 +5,19 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/yur-ochka/lab4-it-projects'
+                    url: 'https://github.com/yur-ochka/lab4-it-projects.git'
             }
         }
 
         stage('Build') {
             steps {
-                sh 'gcc main.c -o main'
+                bat 'gcc main.c -o main.exe'
             }
         }
 
         stage('Test') {
             steps {
-                sh './main'
+                bat 'main.exe'
             }
         }
     }
