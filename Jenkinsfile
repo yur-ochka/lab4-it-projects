@@ -11,13 +11,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'echo Build stage completed successfully'
+                bat 'node -v'
             }
         }
 
         stage('Test') {
             steps {
-                bat 'echo CI/CD works!'
+                bat 'node test.js'
             }
         }
     }
